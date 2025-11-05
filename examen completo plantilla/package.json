@@ -1,0 +1,85 @@
+{
+  "name": "rejap-fast-automation",
+  "version": "1.0.0",
+  "description": "Automatización BDD con Cypress, Cucumber y Gherkin para REJAP Fast",
+  "scripts": {
+    "// ===== COMANDOS BÁSICOS =====": "",
+    "cy:open": "cypress open",
+    "cy:open:fast": "cypress open --config video=false",
+    "cy:run": "cypress run",
+    
+    "// ===== EJECUCIÓN RÁPIDA (RECOMENDADO) =====": "",
+    "test:fast": "cypress run --browser electron --config video=false,screenshotOnRunFailure=false,numTestsKeptInMemory=0",
+    "test:dev": "cypress run --browser electron --config video=false",
+    "test:chrome:fast": "cypress run --browser chrome --headless --config video=false",
+    
+    "// ===== TESTS COMPLETOS =====": "",
+    "test": "cypress run --spec 'cypress/e2e/**/*.feature' --config video=false",
+    "test:all": "cypress run --browser electron --config video=false",
+    "test:headed": "cypress run --headed --config video=false",
+    
+    "// ===== HISTORIA 1: LOGIN =====": "",
+    "test:h1": "cypress run --spec 'cypress/e2e/features/H1_login.feature' --config video=false",
+    "test:h1:fast": "cypress run --spec 'cypress/e2e/features/H1_login.feature' --browser electron --config video=false,screenshotOnRunFailure=false",
+    "test:h1:chrome": "cypress run --spec 'cypress/e2e/features/H1_login.feature' --browser chrome --headed --config video=false",
+    "test:h1:smoke": "cypress run --spec 'cypress/e2e/features/H1_login.feature' --env grepTags='@smoke' --config video=false",
+    "test:h1:debug": "cypress open --config testFiles='**/H1_login.feature',video=false",
+    
+    "// ===== HISTORIA 2: REGISTRO SOLICITUD =====": "",
+    "test:h2": "cypress run --spec 'cypress/e2e/features/H2_registro_solicitud.feature' --config video=false",
+    "test:h2:fast": "cypress run --spec 'cypress/e2e/features/H2_registro_solicitud.feature' --browser electron --config video=false,screenshotOnRunFailure=false",
+    "test:h2:chrome": "cypress run --spec 'cypress/e2e/features/H2_registro_solicitud.feature' --browser chrome --headed --config video=false",
+    "test:h2:smoke": "cypress run --spec 'cypress/e2e/features/H2_registro_solicitud.feature' --env grepTags='@smoke' --config video=false",
+    "test:h2:debug": "cypress open --config testFiles='**/H2_registro_solicitud.feature',video=false",
+    
+    "// ===== POR TAGS =====": "",
+    "test:smoke": "cypress run --env grepTags='@smoke' --browser electron --config video=false",
+    "test:regression": "cypress run --env grepTags='@regression' --browser electron --config video=false",
+    "test:critical": "cypress run --env grepTags='@critical' --browser electron --config video=false",
+    
+    "// ===== NAVEGADORES ESPECÍFICOS =====": "",
+    "test:electron": "cypress run --browser electron --config video=false",
+    "test:chrome": "cypress run --browser chrome --headless --config video=false",
+    "test:edge": "cypress run --browser edge --headless --config video=false",
+    "test:firefox": "cypress run --browser firefox --headless --config video=false",
+    
+    "// ===== DESARROLLO Y DEBUG =====": "",
+    "dev": "cypress open --config video=false",
+    "debug:h1": "cypress open --spec 'cypress/e2e/features/H1_login.feature' --config video=false",
+    "debug:h2": "cypress open --spec 'cypress/e2e/features/H2_registro_solicitud.feature' --config video=false",
+    
+    "// ===== LIMPIEZA =====": "",
+    "clean": "node -e \"require('fs').rmSync('cypress/reports', {recursive:true, force:true}); require('fs').rmSync('cypress/screenshots', {recursive:true, force:true}); require('fs').rmSync('cypress/videos', {recursive:true, force:true})\"",
+    "clean:reports": "node -e \"require('fs').rmSync('cypress/reports', {recursive:true, force:true})\"",
+    "clean:screenshots": "node -e \"require('fs').rmSync('cypress/screenshots', {recursive:true, force:true})\"",
+    "clean:videos": "node -e \"require('fs').rmSync('cypress/videos', {recursive:true, force:true})\"",
+    
+    "// ===== CI/CD =====": "",
+    "ci": "npm run clean && cypress run --browser electron --config video=false,screenshotOnRunFailure=true",
+    "ci:chrome": "npm run clean && cypress run --browser chrome --headless --config video=false,screenshotOnRunFailure=true",
+    "ci:smoke": "cypress run --env grepTags='@smoke' --browser electron --config video=false",
+    
+    "// ===== UTILIDADES =====": "",
+    "pretest": "npm run clean",
+    "posttest": "echo '✅ Tests completados'",
+    "verify": "cypress verify",
+    "info": "cypress info"
+  },
+  "keywords": [
+    "cypress",
+    "cucumber",
+    "gherkin",
+    "bdd",
+    "automation",
+    "testing",
+    "rejap"
+  ],
+  "author": "Tu Nombre",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.6.0",
+    "esbuild": "^0.19.0"
+  }
+}

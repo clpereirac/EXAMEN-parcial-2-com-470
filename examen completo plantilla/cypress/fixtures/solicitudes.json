@@ -1,0 +1,39 @@
+{
+  "solicitudes": {
+    "valida": {
+      "ci": "5797681",
+      "nombre": "ANDREA",
+      "primerApellido": "GARCIA",
+      "segundoApellido": "GUTIERREZ",
+      "departamento": "SANTA CRUZ",
+      "fechaNacimiento": "01/01/1990",
+      "direccion": "Av. Principal #123",
+      "motivo": "CONVOCATORIA PUBLICA A TRABAJO",
+      "descripcionMotivo": "SOLICITUD DE CERTIFICADO PARA CONVOCATORIA LABORAL",
+      "observaciones": "CERTIFICADO SOLICITADO PARA TRAMITE LABORAL"
+    },
+    "invalida": {
+      "ci": "00000000",
+      "observaciones": "CI INVALIDO PARA PRUEBA"
+    },
+    "homonimia": {
+      "ci": "12345678",
+      "observaciones": "CASO DE HOMONIMIA DETECTADO"
+    }
+  },
+  "motivos": [
+    "CONVOCATORIA PUBLICA A TRABAJO",
+    "TRAMITE PERSONAL",
+    "ADOPCION",
+    "VISA",
+    "OTROS"
+  ],
+  "documentosAdjuntos": {
+    "docIdentidad": true,
+    "excento": false,
+    "ordenJudicial": false,
+    "reqFiscal": false,
+    "memorial": false,
+    "certSEGIP": false
+  }
+}

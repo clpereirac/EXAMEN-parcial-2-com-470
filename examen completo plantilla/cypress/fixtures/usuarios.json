@@ -1,0 +1,21 @@
+{
+  "usuarios": {
+    "valido": {
+      "username": "inava",
+      "password": "123"
+    },
+    "invalido": {
+      "username": "usuario_invalido",
+      "password": "password_incorrecta"
+    }
+  },
+  "menuOpciones": [
+    "Solicitudes",
+    "Respuestas",
+    "Entregados",
+    "Anulados",
+    "Reportes",
+    "Contraseña",
+    "Salir"
+  ]
+}
